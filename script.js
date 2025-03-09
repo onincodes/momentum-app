@@ -10,7 +10,7 @@ function updateTime() {
   hours = hours % 12 || 12;
 
   // Add leading zero to minutes if it's a single digit (e.g., "9:05" instead of "9:5")
-  minutes = minutes < 10 ? "0" + minutes : minutes;
+  minutes = minutes < 10 ? "0" + minutes : minutes; // Using ternary operator
 
   // Format the time as HH:MM and update the element with id "time"
   time.textContent = `${hours}:${minutes}`;

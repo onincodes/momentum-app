@@ -76,7 +76,7 @@ let today = document.getElementById("day");
 let task = document.getElementById("day-task");
 let goalForm = document.getElementById("goal-form");
 let taskInput = document.getElementById("goal-task");
-let quote = document.getElementById("qotd");
+let quoteDiv = document.getElementById("qotd");
 
 function getGoal(event) {
   event.preventDefault();
@@ -91,8 +91,26 @@ function getGoal(event) {
     taskInput.style.display = "none";
     task.classList.remove("hide");
     taskInput.classList.add("hide");
-    quote.style.marginTop = "107px";
+    quoteDiv.style.marginTop = "107px";
   }
 }
 
 goalForm.addEventListener("submit", getGoal);
+
+// ------------------------------------- User Story 7 --------------------------------------------
+// Add new quote
+let quoteForm = document.getElementById("quote-form");
+let quoteInput = document.querySelector(".new-quote");
+let quote = document.getElementById("quote");
+
+function newQuote(event) {
+  event.preventDefault();
+  let quoteValue = quoteInput.value.trim();
+
+  if (quoteValue) {
+    quote.textContent = quoteValue;
+    quoteInput.value = "";
+  }
+}
+
+quoteForm.addEventListener("submit", newQuote);

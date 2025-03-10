@@ -1,3 +1,4 @@
+// ------------------------------------- User Story 2 --------------------------------------------
 // Use updated time
 let time = document.getElementById("time");
 
@@ -20,8 +21,8 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime(); // Run immediately when the page loads
 
+// ------------------------------------- User Story 1, 3 --------------------------------------------
 // Update greetings
-// Select the element where the greeting will be displayed
 let greetDay = document.getElementById("greet-day");
 
 // Function to update the greeting based on the current time
@@ -47,6 +48,7 @@ function updateGreetings() {
 setInterval(updateGreetings, 1000);
 updateGreetings(); // Run immediately when the page loads
 
+// ------------------------------------- User Story 1 --------------------------------------------
 // Handle user name submission
 let user = document.getElementById("name");
 let nameInput = document.querySelector(".name-form");
@@ -68,12 +70,13 @@ function userName(event) {
 // Attach event listener to form submission
 nameForm.addEventListener("submit", userName);
 
+// ------------------------------------- User Story 4 --------------------------------------------
 // Handle task of the day
 let today = document.getElementById("day");
 let task = document.getElementById("day-task");
 let goalForm = document.getElementById("goal-form");
 let taskInput = document.getElementById("goal-task");
-let quote = document.getElementById("quote");
+let quote = document.getElementById("qotd");
 
 function getGoal(event) {
   event.preventDefault();
@@ -82,11 +85,13 @@ function getGoal(event) {
   if (taskValue) {
     today.textContent = "TODAY";
     today.style.fontSize = "24px";
+    today.style.marginTop = "20px";
     task.textContent = taskValue;
     task.style.display = "block";
+    taskInput.style.display = "none";
     task.classList.remove("hide");
     taskInput.classList.add("hide");
-    quote.style.marginTop = "10px";
+    quote.style.marginTop = "107px";
   }
 }
 

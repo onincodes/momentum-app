@@ -3,7 +3,7 @@
   <head>
     <title>Momentum App</title>
     <link href="style.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <img src="Japan.png" id="bg-image" />
@@ -11,8 +11,8 @@
     <div id="intro-div">
       <div id="name-intro">
         <p id="name-what">Hello! What's your name?</p>
-        <form id="name-form">
-          <input type="text" class="name-form" />
+        <form method="get" id="name-form">
+          <input type="text" name="name" class="name-form" required />
 
           <p id="enter-name">
             Please enter your first name or the name you prefer to be called.
@@ -34,7 +34,7 @@
       <div id="main-goal">
         <p id="day">What is your main goal for today?</p>
         <form id="goal-form">
-          <input type="text" id="goal-task" />
+          <input type="text" name="goal" id="goal-task" />
         </form>
       </div>
 

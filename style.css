@@ -102,6 +102,29 @@ body {
   margin-top: 10px;
 }
 
+#day-task {
+  display: none;
+  font-size: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* When intro-div fades out */
+#goal-form.hide,
+#goal-task.hide {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction after fade-out */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fully hide intro-div after fading out */
+#goal-form.hidden,
+#goal-task.hidden {
+  display: none;
+}
+
 #qotd {
   display: flex;
   flex-direction: column;
@@ -143,7 +166,7 @@ body {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Optional: Fully hide intro-div after fading out */
+/* Fully hide intro-div after fading out */
 #intro-div.hidden {
   display: none;
 }

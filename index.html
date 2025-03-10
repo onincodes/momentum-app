@@ -12,7 +12,13 @@
       <div id="name-intro">
         <p id="name-what">Hello! What's your name?</p>
         <form method="get" id="name-form">
-          <input type="text" name="name" class="name-form" required />
+          <input
+            type="text"
+            name="name"
+            class="name-form"
+            required
+            autocomplete="off"
+          />
 
           <p id="enter-name">
             Please enter your first name or the name you prefer to be called.
@@ -33,8 +39,9 @@
 
       <div id="main-goal">
         <p id="day">What is your main goal for today?</p>
+        <h2 id="day-task">TASK</h2>
         <form id="goal-form">
-          <input type="text" name="goal" id="goal-task" />
+          <input type="text" name="goal" id="goal-task" autocomplete="off" />
         </form>
       </div>
 

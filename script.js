@@ -20,27 +20,6 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime(); // Run immediately when the page loads
 
-// Handle user name submission
-let user = document.getElementById("name");
-let nameInput = document.querySelector(".name-form");
-let nameForm = document.getElementById("name-form");
-let introDiv = document.getElementById("intro-div");
-let mainDiv = document.getElementById("main-div");
-
-function userName(event) {
-  event.preventDefault(); // Prevent page reload
-  let nameValue = nameInput.value.trim(); // Get the name from input
-
-  if (nameValue) {
-    user.textContent = nameValue; // Update displayed name
-    introDiv.classList.add("hide"); // Apply CSS class for fade-out
-    mainDiv.classList.add("show"); // Apply CSS class for fade-in
-  }
-}
-
-// Attach event listener to form submission
-nameForm.addEventListener("submit", userName);
-
 // Update greetings
 // Select the element where the greeting will be displayed
 let greetDay = document.getElementById("greet-day");
@@ -67,3 +46,48 @@ function updateGreetings() {
 // Call updateGreetings every second to ensure it stays updated
 setInterval(updateGreetings, 1000);
 updateGreetings(); // Run immediately when the page loads
+
+// Handle user name submission
+let user = document.getElementById("name");
+let nameInput = document.querySelector(".name-form");
+let nameForm = document.getElementById("name-form");
+let introDiv = document.getElementById("intro-div");
+let mainDiv = document.getElementById("main-div");
+
+function userName(event) {
+  event.preventDefault(); // Prevent page reload
+  let nameValue = nameInput.value.trim(); // Get the name from input
+
+  if (nameValue) {
+    user.textContent = nameValue; // Update displayed name
+    introDiv.classList.add("hide"); // Apply CSS class for fade-out
+    mainDiv.classList.add("show"); // Apply CSS class for fade-in
+  }
+}
+
+// Attach event listener to form submission
+nameForm.addEventListener("submit", userName);
+
+// Handle task of the day
+let today = document.getElementById("day");
+let task = document.getElementById("day-task");
+let goalForm = document.getElementById("goal-form");
+let taskInput = document.getElementById("goal-task");
+let quote = document.getElementById("quote");
+
+function getGoal(event) {
+  event.preventDefault();
+  let taskValue = taskInput.value.trim();
+
+  if (taskValue) {
+    today.textContent = "TODAY";
+    today.style.fontSize = "24px";
+    task.textContent = taskValue;
+    task.style.display = "block";
+    task.classList.remove("hide");
+    taskInput.classList.add("hide");
+    quote.style.marginTop = "10px";
+  }
+}
+
+goalForm.addEventListener("submit", getGoal);

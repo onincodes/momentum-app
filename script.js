@@ -102,6 +102,14 @@ goalForm.addEventListener("submit", getGoal);
 let quoteForm = document.getElementById("quote-form");
 let quoteInput = document.querySelector(".new-quote");
 let quote = document.getElementById("quote");
+let addQuoteDiv = document.getElementById("add-quote");
+let editQuote = document.getElementById("edit-quote");
+
+function showAddQuote() {
+  addQuoteDiv.classList.toggle("visible");
+}
+
+editQuote.addEventListener("click", showAddQuote);
 
 function newQuote(event) {
   event.preventDefault();
@@ -110,6 +118,7 @@ function newQuote(event) {
   if (quoteValue) {
     quote.textContent = quoteValue;
     quoteInput.value = "";
+    showAddQuote();
   }
 }
 

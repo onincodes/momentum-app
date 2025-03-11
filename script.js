@@ -102,11 +102,12 @@ goalForm.addEventListener("submit", getGoal);
 let quoteForm = document.getElementById("quote-form");
 let quoteInput = document.querySelector(".new-quote");
 let quote = document.getElementById("quote");
-let addQuoteDiv = document.getElementById("add-quote");
+let addQuoteDiv = document.getElementById("add-quote-div");
 let editQuote = document.getElementById("edit-quote");
 
 function showAddQuote() {
   addQuoteDiv.classList.toggle("visible");
+  addTaskDiv.classList.remove("visible");
 }
 
 editQuote.addEventListener("click", showAddQuote);
@@ -123,3 +124,42 @@ function newQuote(event) {
 }
 
 quoteForm.addEventListener("submit", newQuote);
+
+// ------------------------------------- User Story 8 --------------------------------------------
+// New task
+let taskForm = document.getElementById("task-form");
+let addTaskDiv = document.getElementById("add-task-div");
+let addTask = document.getElementById("add-task");
+let newTaskInput = document.querySelector(".new-task");
+let taskDiv = document.getElementById("task-div");
+let taskList = document.getElementById("task-list");
+
+function showAddTask() {
+  addTaskDiv.classList.toggle("visible");
+  addQuoteDiv.classList.remove("visible");
+}
+
+addTask.addEventListener("click", showAddTask);
+
+function hideTask() {
+  taskDiv.classList.add("hidden");
+}
+
+hideTask();
+
+function newTask(event) {
+  event.preventDefault();
+
+  let taskInputValue = newTaskInput.value.trim();
+
+  if (taskInputValue) {
+    let newElement = document.createElement("li");
+    newElement.textContent = taskInputValue;
+    taskList.appendChild(newElement);
+
+    newTaskInput.value = "";
+    taskDiv.classList.remove("hidden");
+  }
+}
+
+taskForm.addEventListener("submit", newTask);

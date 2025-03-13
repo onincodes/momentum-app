@@ -118,12 +118,28 @@ function newQuote(event) {
 
   if (quoteValue) {
     quote.textContent = quoteValue;
+    quotes.unshift(quoteValue);
     quoteInput.value = "";
     showAddQuote();
   }
 }
 
 quoteForm.addEventListener("submit", newQuote);
+
+// Add random quote function
+const quotes = [
+  `"Great things come from hard work and perseverance. No excuses."`,
+  `"Once you know what failure feels like, determination chases success."`,
+  `"The most important thing is you must put everybody on notice that you're here and you are for real."`,
+  `"I can't relate to lazy people. We don't speak the same language. I don't understand you. I don't want to understand you."`,
+  `"May you always remember to enjoy the road, especially when it's a hard one."`,
+];
+
+let randomNumber = Math.random() * quotes.length;
+let newNumber = Math.floor(randomNumber);
+quote.textContent = quotes[newNumber];
+
+console.log(quotes);
 
 // ------------------------------------- User Story 8 --------------------------------------------
 // New task

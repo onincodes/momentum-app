@@ -170,7 +170,20 @@ function newTask(event) {
 
   if (taskInputValue) {
     let newElement = document.createElement("li");
-    newElement.textContent = taskInputValue;
+    let checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+
+    // Toggle line-through on the <li> itself
+    checkBox.onclick = function () {
+      newElement.classList.toggle("completed");
+    };
+
+    let label = document.createElement("span"); // Create span for text
+    label.textContent = ` ${taskInputValue}`;
+
+    newElement.appendChild(checkBox);
+    newElement.appendChild(label); // Append text inside a span
+
     taskList.appendChild(newElement);
 
     newTaskInput.value = "";

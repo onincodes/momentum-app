@@ -126,6 +126,16 @@ body {
   display: none;
 }
 
+.completed span {
+  text-decoration: line-through; /* Adds line to the task */
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* ----------------------------------- INTRO SECTION ----------------------------------- */
 
 #intro-div {

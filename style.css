@@ -1,3 +1,19 @@
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input,
+textarea,
+select {
+  user-select: text; /* Allow text selection inside form fields */
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -241,6 +257,7 @@ button:hover {
   align-items: flex-end;
   margin-bottom: 10vh;
   margin-top: 70vh;
+  margin-inline: 10vw;
   height: 30vh;
 }
 
@@ -271,7 +288,7 @@ button:hover {
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  width: 30vw;
+  width: 38vw;
   height: 20vh;
 }
 

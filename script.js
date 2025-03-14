@@ -107,7 +107,6 @@ let editQuote = document.getElementById("edit-quote");
 
 function showAddQuote() {
   addQuoteDiv.classList.toggle("visible");
-  addTaskDiv.classList.remove("visible");
 }
 
 editQuote.addEventListener("click", showAddQuote);
@@ -152,7 +151,6 @@ let taskList = document.getElementById("task-list");
 
 function showAddTask() {
   addTaskDiv.classList.toggle("visible");
-  addQuoteDiv.classList.remove("visible");
 }
 
 addTask.addEventListener("click", showAddTask);
